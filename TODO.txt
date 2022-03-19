@@ -1,0 +1,35 @@
+1. Multiple Cart Checkout - done
+put in array json, query it all in checkout - done
+then delete from Cart - done
+
+2. Search Query Filter
+3. Profile with Filters
+    -All By Date, desc and asc
+    -Pending Orders
+        -show updated
+    -Accepted Orders
+        -show updated
+        -show eta
+    -Declined Orders
+        -show updated
+        -show reason
+    -Canceled Orders
+        -show updated
+
+
+ADMIN SIDE
+1. Orders
+unable to cancel orders if admin already accepted.
+
+2. Implementation of showing pending orders
+    -clicking and transfer to another url with params
+    -using data attr? (E.G. data-amount ="<?php?>")
+
+3. Transaction of all ( HISTORY )
+Showing all of history without relational database.
+once client checkouts, it will query all necessary infos
+from user and item.
+
+will be updated if admin or client changes status (E.G. Canceled/accepted/declined)
+
+4. Receipt
