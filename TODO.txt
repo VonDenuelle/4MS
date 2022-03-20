@@ -16,6 +16,8 @@ then delete from Cart - done
     -Canceled Orders
         -show updated
 
+4. Select Address upon buying now
+5. Edit/Add address on profile page
 
 ADMIN SIDE
 1. Orders

@@ -3,7 +3,7 @@ session_start();
 
 //checks if already logged in
 if (!isset($_SESSION['userid'])) {
-      header("Location: /Temp/items");
+      header("Location: /4MS/items");
 }
 ?>
 
@@ -105,6 +105,7 @@ if (!isset($_SESSION['userid'])) {
     ?>
 
     <button id="checkout">Checkout</button>
+
 
 </body>
 
