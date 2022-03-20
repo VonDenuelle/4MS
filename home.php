@@ -2,6 +2,20 @@
 
    <!-- Meta Tags -->
    <?php include_once 'php/global/head.php'; ?>
+   
+   <title>4MS Flower Shop | Home</title>
+      <!-- CSS -->
+      <link rel="stylesheet" href="assets/css/index.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+      <!-- SCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/items.js" charset="utf-8"></script>
+    
+   </head>
+
+   <body>
       <!-- HEADER -->
       <!-- ============================================================================================================================ -->
       <!-- Navbar -->
