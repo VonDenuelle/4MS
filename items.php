@@ -37,7 +37,7 @@
         foreach ($results as $item) {
             # code...?>
 
-    <a href="/Temp/comments?itemid=<?php echo htmlspecialchars($item['id']); ?>">
+    <a href="/4MS/comments?itemid=<?php echo htmlspecialchars($item['id']); ?>">
         <div class="card" style="width: 18rem;">
             <img src="images/flowers/<?php echo htmlspecialchars($item['image']); ?>" class="card-img-top" alt="...">
             <div class="card-body">
