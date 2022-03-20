@@ -21,5 +21,5 @@ if (isset($_GET['itemid']) && isset($_GET['image'])) {
         exit();
     }
 } else {
-    header("Location: /Temp/items/"); /* Redirect browser */
+    header("Location: /Temp/home/"); /* Redirect browser */
 }

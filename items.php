@@ -3,16 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name=”title” content="Geo Tag Generator" />
+    <meta name=”title” content="4MS Flower Shop" />
     <meta name="description" content="This is meta description Sample. We can add up to 158.">
-
     <meta name="geo.region" content="PH-ZMB" />
     <meta name="geo.placename" content="Olongapo" />
     <meta name="geo.position" content="14.831468;120.283521" />
     <meta name="ICBM" content="14.831468, 120.283521" />
 
-    <meta name=”keywords” content=”tag, generator, geo, web, tags, meta, site, create, html, editor, geocoding,
-        geotagging” />
+    <meta name=”keywords” content=”4MS, Flower Shop, flower, rose, bouquet, olongapo city, 4ms flower shop, custom flowers, different flowers, petals” />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <title>4MS Flower Shop</title>

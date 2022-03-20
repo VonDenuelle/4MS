@@ -98,7 +98,7 @@ $('.myForm').on('submit', '#signupForm', function (e) {
               $('.error').text(val);
               break;
             case 'success':
-              window.location.replace('items');
+              window.location.replace('home');
               break;
           }
         });

@@ -41,5 +41,5 @@ if (isset($_POST['username'])) {
         }
     }
 } else {
-    header("Location: /Temp"); /* Redirect browser */
+    header("Location: /4MS"); /* Redirect browser */
 }

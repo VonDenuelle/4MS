@@ -3,7 +3,7 @@ session_start();
 
 //checks if itemid is present (clicked on an item)
 if (!isset($_GET['itemid'])) {
-      header("Location: /4MS/items");
+      header("Location: /4MS/home");
 }
 ?>
 

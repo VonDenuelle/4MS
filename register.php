@@ -3,7 +3,7 @@ session_start();
 
 //checks if already logged in
 if (isset($_SESSION['userid'])) {
-      header("Location: /4MS/items");
+      header("Location: /4MS/home");
 }
 
 //checks if admin is  logged in

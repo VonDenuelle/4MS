@@ -1,7 +1,11 @@
 *{
    font-family: FreeMono, monospace;
 }
-
+/* added */
+.pointer{
+   cursor: pointer;
+}
+/*  */
 img.logo{
    height: 70px;
 }

@@ -1,60 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Main Page</title>
 
-      <link rel="stylesheet" href="assets/css/index.css">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   </head>
 
-   <body>
+   <!-- Meta Tags -->
+   <?php include_once 'php/global/head.php'; ?>
       <!-- HEADER -->
       <!-- ============================================================================================================================ -->
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg">
-         <div class="container-fluid">
-            <a class="navbar-brand mx-4" href="#"><img class="logo" src="assets/imgs/4M's Logo.png"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item mx-3">
-                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-
-                  <li class="nav-item mx-3">
-                     <a class="nav-link" href="#">About</a>
-                  </li>
-
-                  <li class="nav-item mx-3">
-                     <a class="nav-link" href="#">Products</a>
-                  </li>
-                  
-                  <li class="nav-item mx-3">
-                     <a class="nav-link" href="#">Delivery</a>
-                  </li>
-               </ul>
-               
-               <div class="input-group">
-                  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                  <button type="button" class="btn btn-outline-primary"><img class="icons mx-3" src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
-               </div>
-
-               <a href="#">
-                  <img class="icons mx-3" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-shopping-cart-miscellaneous-kiranshastry-lineal-kiranshastry.png"/>
-               </a>
-
-               <a href="#">
-                  <img class="icons mx-3" src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-user-interface-kiranshastry-solid-kiranshastry-1.png"/>
-               </a> 
-            </div>
-         </div>
-      </nav>
+      
+      <?php include_once 'php/global/navbar.php'; ?>
 
       <!-- ============================================================================================================================ -->
       <!-- Carousel -->
@@ -157,108 +109,36 @@
          </div>
 
          <div class="row mt-3">
-            <div class="col mx-2">
-               <div class="card">
-                  <img class="prod-display mx-auto" src="assets/imgs/a.jpg" class="w-100" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class=""card-title>*Product Name*</h5>
-                     <p class="card-text">*price*</p>
-                  </div>
-               </div>
-            </div>
 
-            <div class="col mx-2">
-               <div class="card">
-                  <img class="prod-display mx-auto" src="assets/imgs/b.jpg" class="w-100" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class=""card-title>*Product Name*</h5>
-                     <p class="card-text">*price*</p>
-                  </div>
-               </div>
-            </div>
 
-            <div class="col mx-2">
-               <div class="card">
-                  <img class="prod-display mx-auto" src="assets/imgs/c.jpg" class="w-100" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class=""card-title>*Product Name*</h5>
-                     <p class="card-text">*price*</p>
-                  </div>
-               </div>
-            </div>
+            <?php
+    require_once 'php/config.php';
 
-            <div class="col mx-2">
-               <div class="card">
-                  <img class="prod-display mx-auto" src="assets/imgs/d.jpg" class="w-100" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class=""card-title>*Product Name*</h5>
-                     <p class="card-text">*price*</p>
-                  </div>
-               </div>
-            </div>
+    $sql ="SELECT * FROM items ORDER BY date_added DESC";
+    $query = $dbh -> query($sql);
+    $results=$query->fetchAll(PDO::FETCH_ASSOC);
+    $rowcount=$query->rowCount();
 
-            <div class="col mx-2">
+    if ($rowcount > 0) {
+        foreach ($results as $item) {
+         ?>
+         
+          <div class="col mx-2 pointer" onclick="window.location='/4MS/comments?itemid=<?php echo htmlspecialchars($item['id']); ?>'">
                <div class="card">
-                  <img class="prod-display mx-auto" src="assets/imgs/e.jpg" class="w-100" class="card-img-top" alt="...">
+                  <img class="prod-display mx-auto" src="images/flowers/<?php echo htmlspecialchars($item['image']); ?>" class="w-100" class="card-img-top" alt="...">
                   <div class="card-body">
-                     <h5 class=""card-title>*Product Name*</h5>
-                     <p class="card-text">*price*</p>
+                     <h5 class=""card-title><?php echo htmlspecialchars($item['name']); ?></h5>
+                     <p class="card-text">₱<?php echo htmlspecialchars($item['price']); ?>.00</p>
                   </div>
                </div>
             </div>
+        <?php          
+        }
+    }
+    ?>
+
          </div>
-
-         <div class="row">
-            <div class="col mx-2 mt-3">
-               <div class="card">
-                  <img class="prod-display mx-auto" src="assets/imgs/f.jpg" class="w-100" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class=""card-title>*Product Name*</h5>
-                     <p class="card-text">*price*</p>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col mx-2 mt-3">
-               <div class="card">
-                  <img class="prod-display mx-auto" src="assets/imgs/g.jpg" class="w-100" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class=""card-title>*Product Name*</h5>
-                     <p class="card-text">*price*</p>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col mx-2 mt-3">
-               <div class="card">
-                  <img class="prod-display mx-auto" src="assets/imgs/h.jpg" class="w-100" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class=""card-title>*Product Name*</h5>
-                     <p class="card-text">*price*</p>
-                  </div>
-               </div>
-            </div>
-            
-            <div class="col mx-2 mt-3">
-               <div class="card">
-                  <img class="prod-display mx-auto" src="assets/imgs/i.jpg" class="w-100" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class=""card-title>*Product Name*</h5>
-                     <p class="card-text">*price*</p>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col mx-2 mt-3">
-               <div class="card">
-                  <img class="prod-display mx-auto" src="assets/imgs/j.jpg" class="w-100" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class=""card-title>*Product Name*</h5>
-                     <p class="card-text">*price*</p>
-                  </div>
-               </div>
-            </div>
-         </div>
+         
       </div>
 
       <!-- FOOTER -->
@@ -281,7 +161,7 @@
                   <h5 class="right">Contact</h5>
 
                   <p class="rightFoot">+639 463 315 653</p>
-                  <p class="rightFoot">https://www.facebook.com/4msflowershop</p>
+                  <p class="rightFoot"><a target="_blank" href="https://www.facebook.com/4msflowershop">4MS Flower Shop Facebook Page</a></p>
                </div>
                <!--Grid column-->
             </div>

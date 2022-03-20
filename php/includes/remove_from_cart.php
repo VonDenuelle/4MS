@@ -15,5 +15,5 @@ if (isset($_SESSION['userid'])) {
         exit();
 
 } else {
-    header("Location: /Temp/items/"); /* Redirect browser */
+    header("Location: /Temp/home/"); /* Redirect browser */
 }
