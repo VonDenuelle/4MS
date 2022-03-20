@@ -24,7 +24,7 @@ if (isset($firstname)) {
         $error = ['emptyfields' => 'Please fill in all the fields'];
         echo json_encode($error);
         exit();
-    } elseif (!preg_match("/([%\$#\*]+)/", $username) || strlen($username) < 6) {
+    } elseif (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $username) || strlen($username) < 6) {
         $error = ['invalidusername' => 'Invalid username, should not contain symbols and must be atleast 6 characters'];
         echo json_encode($error);
         exit();
@@ -72,6 +72,7 @@ if (isset($firstname)) {
                 $query = 'SELECT * FROM users WHERE Id = '.$insertedID;
                 $stmt = $dbh->query($query);
 
+                $row = $stmt->fetch(); 
                 session_start();
                 $_SESSION['userid']= $row['id'];
                 $_SESSION['username']= $row['username'];
@@ -85,5 +86,5 @@ if (isset($firstname)) {
         }
     }
 } else {
-    header("Location: /Temp"); /* Redirect browser */
+    header("Location: /4MS"); /* Redirect browser */
 }
