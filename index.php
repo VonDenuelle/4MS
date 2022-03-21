@@ -46,29 +46,32 @@ if (isset($_SESSION['adminid'])) {
 <body>
   <div class="d-lg-flex half">
     <div class="bg order-1 order-md-2" style="background-image: url('images/login.jpg');"></div>
-    <div class="contents order-2 order-md-1">
+    <div class="contents order-2 order-md-1" style="background-color: rgb(30, 39, 46)">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7 myForm">
-            <h3>Login to <strong>4MS</strong></h3>
-            <p class="mb-4">The Best Flower Shop in Olongapo City</p>
+            <img class="logo d-block mb-4" src="assets/imgs/4M's Logo.png" style="height: 150px; margin-left: auto; margin-right: auto">
+            <h3 style="color: #b3b3b3; text-decoration: underline; text-align: center"><strong>LOGIN</strong></h3>
           
             <form id="signinForm">
               <div class="form-group first">
-                <label for="username">Username</label>
+                <label style="color: #b3b3b3" for="username">Username</label>
                 <input type="text" class="form-control" placeholder="Your Username" id="signinUsername">
               </div>
               <div class="form-group last mb-3">
-                <label for="password">Password</label>
+                <label style="color: #b3b3b3" for="password">Password</label>
                 <input type="password" class="form-control" placeholder="Your Password" id="signinPassword">
               </div>
 
-              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+              <input type="submit" value="Log In" class="btn btn-block btn-danger" style="background: #d58b8b">
               
               <div class="bar error">Error message</div>
-              <div class="btn">Dont have an account?<span class="btn-link"
-                  onclick="window.open('/4MS/register', '_blank')"> Create here</span></div>
+              <div class="btn" style="color: #b3b3b3">Dont have an account?
+                <span class="btn-link"
+                  onclick="window.open('/4MS/register', '_blank')"> Create here
+                </span>
+              </div>
             </form>
 
 
@@ -82,7 +85,7 @@ if (isset($_SESSION['adminid'])) {
 
 
   <footer>
-    <p>
+    <p style="background-color: rgba(0, 0, 0, 0.2)">
       Located at #31 18th St., East Bajac-Bajac Olongapo
       <a target="_blank" href="https://www.facebook.com/4msflowershop">4MS Flower Shop</a>
       - Check their reviews

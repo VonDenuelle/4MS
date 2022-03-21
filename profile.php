@@ -39,6 +39,13 @@ if (!isset($_SESSION['userid'])) {
 
 <body>
 
+    <!-- Meta Tags -->
+   <?php include_once 'php/global/head.php'; ?>
+      <!-- HEADER -->
+      <!-- ============================================================================================================================ -->
+      <!-- Navbar -->
+      
+      <?php include_once 'php/global/navbar.php'; ?>
     <div class="container">
 
 
@@ -58,19 +65,21 @@ if (!isset($_SESSION['userid'])) {
                 $results=$query->fetch(PDO::FETCH_ASSOC);
             ?>
 
-                        <h5 class="card-title">
+                        <h5 class="card-text">Name:
                             <?php echo htmlspecialchars($results['firstname']). ' ' .
                             htmlspecialchars($results['middlename']). ' '.
                             htmlspecialchars($results['lastname']) ?>
                         </h5>
-                        <p class="card-text">
+                        <p class="card-text">Username:
                             <small class="text-muted">
                                 <?php echo htmlspecialchars($results['username'])?>
                             </small>
                         </p>
-                        <p class="card-text">
-                            <?php echo htmlspecialchars($results['gender']). ', ' .
-                            htmlspecialchars($results['age']) ?>
+                        <p class="card-text">Age:
+                            <small class="text-muted">
+                                <?php echo htmlspecialchars($results['gender']). ', ' .
+                                htmlspecialchars($results['age']) ?>
+                            </small>
                         </p>
 
 
@@ -184,6 +193,39 @@ if (!isset($_SESSION['userid'])) {
 
 
     </div>
+
+   <!-- Info -->
+   <footer class="bg-dark text-center text-lg-start">
+         <!-- Grid container -->
+         <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+               <!--Grid column-->
+               <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                  <h5 class="left">Company</h5>
+
+                  <p class="leftFoot">4M's Flower Shop</p>
+                  <p class="leftFoot">31 18 St., East Bajac-Bajac, Olongapo City </p>
+               </div>
+
+               <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                  <h5 class="right">Contact</h5>
+
+                  <p class="rightFoot">+639 463 315 653</p>
+                  <p class="rightFoot"><a target="_blank" href="https://www.facebook.com/4msflowershop">4MS Flower Shop Facebook Page</a></p>
+               </div>
+               <!--Grid column-->
+            </div>
+            <!--Grid row-->
+         </div>
+         <!-- Grid container -->
+
+         <!-- Copyright -->
+         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © Jin-Doe Devs 2022
+         </div>
+      <!-- Copyright -->
+      </footer>
 
 </body>
 

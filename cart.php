@@ -34,6 +34,14 @@ if (!isset($_SESSION['userid'])) {
 
 <body>
 
+    <!-- Meta Tags -->
+    <?php include_once 'php/global/head.php'; ?>
+    <!-- HEADER -->
+    <!-- ============================================================================================================================ -->
+    <!-- Navbar -->
+    
+    <?php include_once 'php/global/navbar.php'; ?>
+
 
     <?php
     require_once 'php/config.php';
@@ -105,8 +113,6 @@ if (!isset($_SESSION['userid'])) {
     ?>
 
     <button id="checkout">Checkout</button>
-
-
 </body>
 
 </html>
