@@ -3,15 +3,15 @@
 
 * {
 	box-sizing: border-box;
+	
+	
 }
 
 body {
 	font-family: 'Montserrat', sans-serif;
-
 }
 
 /* login */
-
 p {
 	color: #b3b3b3;
 	font-weight: 300; }
@@ -36,13 +36,14 @@ p {
   .half, .half .container > .row {
 	height: 100vh;
 	min-height: 700px; }
-  
+
   @media (max-width: 991.98px) {
 	.half .bg {
 	  height: 200px; } }
   
   .half .contents {
-	background: #f6f7fc; }
+	background: #203496;
+	overflow: auto; }
   
   .half .contents, .half .bg {
 	width: 50%; }
@@ -78,6 +79,7 @@ p {
 /*  */
 .btn-link{
 	cursor: pointer;
+	color: rgb(30, 39, 46);
 }	
 .btn{
 	width: 100%;
