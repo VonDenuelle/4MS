@@ -140,6 +140,7 @@
      ========================================================================== */
   .page-wrapper {
     min-height: 100vh;
+    background: #d58b8b
   }
   
   body {
@@ -157,7 +158,9 @@
   }
   
   h2 {
-    font-size: 30px;
+    font-size: 32px !important;
+    text-decoration: underline;
+    text-align: center;
   }
   
   h3 {
@@ -259,6 +262,7 @@
     transition: all 0.4s ease;
     cursor: pointer;
     font-size: 18px;
+    background-color: rgb(30, 39, 46) !important;
     color: #fff;
     font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
   }
@@ -351,7 +355,7 @@
      #FORM
      ========================================================================== */
      .form-submit-button {
-      background: #6399c7;
+      background-color: rgb(30, 39, 46);
       color: #fff;
       border: 1px solid #eee;
       border-radius: 5px;
@@ -396,7 +400,7 @@
     border-radius: 5px;
     padding: 0 20px;
     font-size: 16px;
-    color: #666;
+    color: rgb(0, 0, 0);
     -webkit-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
@@ -406,28 +410,31 @@
   .input--style-4::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
     color: #666;
+    opacity: 0.5;
   }
   
   .input--style-4:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
     color: #666;
-    opacity: 1;
+    opacity: 0.5;
   }
   
   .input--style-4::-moz-placeholder {
     /* Mozilla Firefox 19+ */
     color: #666;
-    opacity: 1;
+    opacity: 0.5;
   }
   
   .input--style-4:-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     color: #666;
+    opacity: 0.5;
   }
   
   .input--style-4:-ms-input-placeholder {
     /* Microsoft Edge */
     color: #666;
+    opacity: 0.5;
   }
   
   .label {
@@ -659,11 +666,14 @@
   .card-4 .card-body {
     padding: 57px 65px;
     padding-bottom: 65px;
+    
+    border-radius: 10px;
   }
   
   @media (max-width: 767px) {
     .card-4 .card-body {
       padding: 50px 40px;
+      
+      border-radius: 10px;
     }
   }
-  
