@@ -27,5 +27,5 @@ if(isset($_GET['comment']) && isset($_SESSION['userid'])){
     }
     
 } else {
-    header("Location: /Temp/comments?itemid=".$itemid); /* Redirect browser */
+    header("Location: /4MS/comments?itemid=".$itemid); /* Redirect browser */
 }

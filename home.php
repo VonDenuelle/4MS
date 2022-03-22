@@ -6,8 +6,9 @@
    <title>4MS Flower Shop | Home</title>
       <!-- CSS -->
       <link rel="stylesheet" href="assets/css/index.css">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
       <!-- SCRIPT -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -98,7 +99,7 @@
       <!-- Products -->
       <div class="container products mt-4 mb-4">
          <div class="row">
-            <div class="col-10">
+            <div class="col-12">
                <nav class="navbar">
                   <h3 class="ms-3">Flower Picking</h3> 
                   <ul class="pagination mt-2 me-3">
@@ -110,22 +111,11 @@
                   </ul>
                </nav>
             </div>
-
-            <div class="col-1 mt-2">
-               <img src="https://img.icons8.com/ios/50/000000/list--v1.png"/>
-            </div>
-
-            <div class="col-1 mt-2">
-               <img src="https://img.icons8.com/ios/50/000000/grid.png"/>
-            </div>
-
-           
          </div>
 
-         <div class="row mt-3">
-
-
-            <?php
+         <br>
+      <div class="container flower-flex">
+      <?php
     require_once 'php/config.php';
 
     $sql ="SELECT * FROM items ORDER BY date_added DESC";
@@ -135,23 +125,43 @@
 
     if ($rowcount > 0) {
         foreach ($results as $item) {
-         ?>
-         
-          <div class="col mx-2 pointer" onclick="window.location='/4MS/comments?itemid=<?php echo htmlspecialchars($item['id']); ?>'">
-               <div class="card">
-                  <img class="prod-display mx-auto" src="images/flowers/<?php echo htmlspecialchars($item['image']); ?>" class="w-100" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class=""card-title><?php echo htmlspecialchars($item['name']); ?></h5>
-                     <p class="card-text">₱<?php echo htmlspecialchars($item['price']); ?>.00</p>
-                  </div>
-               </div>
+            # code...?>
+
+    <a class="flower-card" href="/4MS/comments?itemid=<?php echo htmlspecialchars($item['id']); ?>">
+        <div class="card mb-3" >
+         <div class="row g-0">
+            <div class="col-md-4">
+            <img src="images/flowers/<?php echo htmlspecialchars($item['image']); ?>" class="card-img-top" alt="...">
+
             </div>
-        <?php          
+
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo htmlspecialchars($item['name']); ?></h5>
+                <p class="card-text"><?php echo htmlspecialchars($item['description']); ?></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item price">₱<?php echo htmlspecialchars($item['price']); ?>.00</li>
+                <li class="list-group-item">Stock left: <?php echo htmlspecialchars($item['stock']); ?></li>
+                <li class="list-group-item">Added on: 
+                    <?php 
+                        $date=date_create(htmlspecialchars($item['date_added']));
+                        $formattedDate = date_format($date, 'D M j-Y, g:i a');
+                        echo $formattedDate;
+                    ?>
+                </li>
+            </ul>
+        </div>
+        </div>
+        </div>
+    </a>
+
+    <?php          
         }
     }
     ?>
 
-         </div>
+      </div>
          
       </div>
 

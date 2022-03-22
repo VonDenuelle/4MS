@@ -28,5 +28,5 @@ if (isset($_SESSION['userid'])) {
 
 
 } else {
-    header("Location: /Temp/home/"); /* Redirect browser */
+    header("Location: /4MS/home/"); /* Redirect browser */
 }

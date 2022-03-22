@@ -36,7 +36,8 @@ if (isset($_SESSION['adminid'])) {
   <link rel="stylesheet" href="css/index.css">
 
   <!-- script -->
-
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" crossorigin="anonymous">
+  </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="js/index.js" charset="utf-8"></script>
@@ -44,16 +45,28 @@ if (isset($_SESSION['adminid'])) {
 </head>
 
 <body>
-  <div class="d-lg-flex half">
-    <div class="bg order-1 order-md-2" style="background-image: url('images/login.jpg');"></div>
-    <div class="contents order-2 order-md-1" style="background-color: rgb(30, 39, 46)">
 
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"
+      style="background-image: url('images/login.jpg');">
+      <div class="absolute">
+
+      <button type="button" class="btn btn-outline-light btn-absolute" data-bs-toggle="tooltip" data-bs-placement="top"
+        title="GO TO OUR HOMEPAGE TO CHECK OUT OUR WEBSITE FIRST" onclick="window.location.assign('/4MS/home')">
+        or Check our Home
+      </button>
+
+      </div>
+      
+    </div>
+    <div class="contents order-2 order-md-1" style="background-color: rgb(30, 39, 46)">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7 myForm">
-            <img class="logo d-block mb-4" src="assets/imgs/4M's Logo.png" style="height: 150px; margin-left: auto; margin-right: auto">
+            <img class="logo d-block mb-4" src="assets/imgs/4M's Logo.png"
+              style="height: 150px; margin-left: auto; margin-right: auto">
             <h3 style="color: #b3b3b3; text-decoration: underline; text-align: center"><strong>LOGIN</strong></h3>
-          
+
             <form id="signinForm">
               <div class="form-group first">
                 <label style="color: #b3b3b3" for="username">Username</label>
@@ -65,11 +78,10 @@ if (isset($_SESSION['adminid'])) {
               </div>
 
               <input type="submit" value="Log In" class="btn btn-block btn-danger" style="background: #d58b8b">
-              
+
               <div class="bar error">Error message</div>
               <div class="btn" style="color: #b3b3b3">Dont have an account?
-                <span class="btn-link"
-                  onclick="window.open('/4MS/register', '_blank')"> Create here
+                <span class="btn-link" onclick="window.open('/4MS/register', '_blank')"> Create here
                 </span>
               </div>
             </form>

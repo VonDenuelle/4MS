@@ -24,6 +24,7 @@ if (!isset($_GET['itemid'])) {
 <script src="js/comments.js" charset="utf-8"></script>
 <script src="js/cart.js" charset="utf-8"></script>
 <script src="js/checkout.js" charset="utf-8"></script>
+<script src="js/items.js" charset="utf-8"></script>
 </head>
 
 <body>

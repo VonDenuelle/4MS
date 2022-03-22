@@ -25,28 +25,23 @@
             </li>
          </ul>
 
-         <div class="input-group">
+         <div class="input-group searchbox">
             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                aria-describedby="search-addon" list="datalistOptions" id='search' />
             <datalist id="datalistOptions">
-               <!-- <option value="San Francisco">
-               <option value="New York">
-               <option value="Seattle">
-               <option value="Los Angeles">
-               <option value="Chicago"> -->
+               <!-- Dynamic Search -->
             </datalist>
-            <button type="button" class="btn btn-outline-primary"><img class="icons mx-3"
-                  src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" /></button>
+            <button type="button" class="btn btn-outline-light">
+               <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
          </div>
-
-         <a href="/4MS/cart">
-            <img class="icons mx-3"
-               src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-shopping-cart-miscellaneous-kiranshastry-lineal-kiranshastry.png" />
+        
+         <a href="/4MS/cart" class="top-icons">
+            <i class="fa-solid fa-cart-shopping"></i>
          </a>
 
-         <a href="/4MS/profile">
-            <img class="icons mx-3"
-               src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-user-interface-kiranshastry-solid-kiranshastry-1.png" />
+         <a href="/4MS/profile" class="top-icons">
+            <i class="fa-solid fa-user-tie"></i>
          </a>
       </div>
    </div>

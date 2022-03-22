@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
 *{
-    font-family: FreeMono, monospace;
- }
+   font-family: 'Montserrat', sans-serif;
+}
  /* added */
  .pointer{
     cursor: pointer;
@@ -15,10 +17,16 @@
     background-color: rgb(30, 39, 46) !important;
  }
  
- a{
-    color: azure !important;
- }
- 
+/* top navbar */
+ul.navbar-nav li a{
+   color: azure !important;
+}
+
+/* flower picking pagination */
+ul.pagination li a{
+   color: #333 !important;
+}
+
  img.icons{
     height: 30px !important;
     color: aliceblue !important;

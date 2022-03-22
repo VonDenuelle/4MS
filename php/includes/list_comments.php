@@ -25,5 +25,5 @@ $rowCount = $query -> rowCount();
         exit();
     }
 } else {
-    header("Location: /Temp"); /* Redirect browser */
+    header("Location: /4MS"); /* Redirect browser */
 }

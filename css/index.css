@@ -11,7 +11,9 @@ body {
 	font-family: 'Montserrat', sans-serif;
 }
 
+
 /* login */
+
 p {
 	color: #b3b3b3;
 	font-weight: 300; }
@@ -79,7 +81,7 @@ p {
 /*  */
 .btn-link{
 	cursor: pointer;
-	color: rgb(30, 39, 46);
+	color: #d58b8b;
 }	
 .btn{
 	width: 100%;
@@ -123,3 +125,21 @@ footer a {
 	background: #ffe0e0;
 	border: 1px solid #a33a3a;
   }
+
+
+
+  .absolute{
+	position: relative;
+	top: 40%;
+	right: 0%;
+	display: flex;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 12px;
+}
+.btn-absolute{
+	transition: all 0.2s;
+	margin: auto;
+	width: 250px !important;
+	color: #fff;
+}

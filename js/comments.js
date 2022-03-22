@@ -66,9 +66,11 @@ $(document).ready(function () {
     $.ajax({
         url: 'php/includes/list_comments?itemid=' + itemid,
         type: 'GET',
+        contentType: 'application/json; charset=utf-8',
         dataType: 'JSON',
       })
       .done(function (data) {
+        console.log(data);
         /* Reset Comments to prevent duplicates */
         $('.list-group').html('')
 
@@ -88,13 +90,22 @@ $(document).ready(function () {
               minute: '2-digit'
             };
 
+            // $('.list-group')
+            // .append($('<div href="#" class="list-group-item list-group-item-action" aria-current="true">'))
+            // $(content).appendTo(selector);
+            // .append($('<div class="d-flex w-100 justify-content-between">'))
+            // .append($('<h5 class="mb-1">').text( val.username))
+            // .append($('<small>').text(currentDate.toLocaleString('en-us', options)))
+            // .append($('<p class="mb-1">').text( val.comment))
+            // .append($('<small>').text(val.rating))
+
             $('.list-group').append(
               '<div href="#" class="list-group-item list-group-item-action" aria-current="true">' +
               '<div class="d-flex w-100 justify-content-between">' +
-              '<h5 class="mb-1">' + val.username + '</h5>' +
-              '<small>' + currentDate.toLocaleString('en-us', options) + '</small>  </div>' +
-              '<p class="mb-1">' + val.comment + '</p>' +
-              '<small>' + val.rating + '</small></div>'
+              '<h5 class="mb-1">' + htmlEncode(val.username) + '</h5>' +
+              '<small>' + htmlEncode(currentDate.toLocaleString('en-us', options)) + '</small>  </div>' +
+              '<p class="mb-1">' + htmlEncode(val.comment) + '</p>' +
+              '<small>' + htmlEncode(val.rating) + '</small></div>'
             )
           }
         });
@@ -104,5 +115,20 @@ $(document).ready(function () {
       });
   }
 
+
+  function htmlEncode(source) {
+   let encode = source.replace(/(<([^>]+)>)/ig,"");
+   return escapeHtml(encode)
+  }
+
+  function escapeHtml(unsafe)
+{
+  return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ }
 
 }); //end of ready
