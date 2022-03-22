@@ -3,7 +3,7 @@ $(document).ready(function () {
   let url_string = window.location.href; //Get Current URL with Params
   let itemid = (new URL(url_string)).searchParams.get("itemid"); //encode URL and Get individual Params 
 
-    $('#checkout').click(function (e) { 
+    $('#checkoutSingle').click(function (e) { 
         e.preventDefault();
         
         $.ajax({

@@ -109,7 +109,7 @@ $(document).ready(function () {
     });
 
 
-    // ========================DELETE FROM CART==================  
+    // ========================MULTIPLE CHECKOUT THEN DELETE FROM CART==================  
     $('#checkout').click(function (e) {
         e.preventDefault();
 
@@ -119,6 +119,7 @@ $(document).ready(function () {
             $('.form-check-input:checkbox:checked').each(function () {
                 
                 let formInputValue = this //so it can be accessible inside ajax function
+            
                 $.ajax({
                     url: 'php/includes/multiple_checkout.php',
                     type: 'POST',

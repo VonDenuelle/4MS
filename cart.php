@@ -7,39 +7,29 @@ if (!isset($_SESSION['userid'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!-- Meta Tags -->
+<?php include_once 'php/global/head.php'; ?>
 
-<head>
-    <meta charset="utf-8">
-    <meta name=”title” content="Geo Tag Generator" />
-    <meta name="description" content="This is meta description Sample. We can add up to 158.">
+<title>4MS Flower Shop</title>
 
-    <meta name="geo.region" content="PH-ZMB" />
-    <meta name="geo.placename" content="Olongapo" />
-    <meta name="geo.position" content="14.831468;120.283521" />
-    <meta name="ICBM" content="14.831468, 120.283521" />
+<link rel="stylesheet" href="assets/css/navbar.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="js/cart.js" charset="utf-8"></script>
+<script src="js/items.js" charset="utf-8"></script>
 
-    <meta name=”keywords” content=”tag, generator, geo, web, tags, meta, site, create, html, editor, geocoding,
-        geotagging” />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-    <title>4MS Flower Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="js/cart.js" charset="utf-8"></script>
 </head>
+
 
 <body>
 
-    <!-- Meta Tags -->
-    <?php include_once 'php/global/head.php'; ?>
+
     <!-- HEADER -->
     <!-- ============================================================================================================================ -->
     <!-- Navbar -->
-    
+
     <?php include_once 'php/global/navbar.php'; ?>
 
 
@@ -68,6 +58,10 @@ if (!isset($_SESSION['userid'])) {
         foreach ($results as $item) {
             # code...?>
 
+    <div class="container">
+
+     
+ 
     <div class="card" style="width: 18rem;">
         <img src="images/flowers/<?php echo htmlspecialchars($item['image']); ?>" class="card-img-top" alt="...">
         <div class="card-body">
@@ -76,9 +70,9 @@ if (!isset($_SESSION['userid'])) {
         </div>
 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" 
-            data-itemid="<?php echo htmlspecialchars($item['itemid']); ?>"
-            data-quantity="<?php echo htmlspecialchars($item['quantity']) ?>" >
+            <input class="form-check-input" type="checkbox"
+                data-itemid="<?php echo htmlspecialchars($item['itemid']); ?>"
+                data-quantity="<?php echo htmlspecialchars($item['quantity']) ?>">
             <label class="form-check-label" for="flexCheckDefault">
                 check
             </label>
@@ -113,6 +107,8 @@ if (!isset($_SESSION['userid'])) {
     ?>
 
     <button id="checkout">Checkout</button>
+
+    </div>
 </body>
 
 </html>

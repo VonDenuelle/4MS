@@ -1,0 +1,48 @@
+*{
+    font-family: FreeMono, monospace;
+ }
+ /* added */
+ .pointer{
+    cursor: pointer;
+ }
+ /*  */
+ img.logo{
+    height: 70px;
+ }
+ 
+ .navbar{
+    position: absolute;
+    background-color: rgb(30, 39, 46) !important;
+ }
+ 
+ a{
+    color: azure !important;
+ }
+ 
+ img.icons{
+    height: 30px !important;
+    color: aliceblue !important;
+ }
+
+ footer{
+   color: antiquewhite !important;
+}
+
+
+p.leftFoot, .left{
+   text-align: right;
+}
+
+p.rightFoot, .right{
+   text-align: left;
+}
+
+.left, .right{
+   text-decoration: underline;
+}
+
+
+nav{
+
+   color: antiquewhite;
+}
