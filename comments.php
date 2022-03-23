@@ -59,7 +59,7 @@ if (!isset($_GET['itemid'])) {
       <div class="col me-5" style="margin-top: 1in">
         <h5><?php echo htmlspecialchars($item['name']); ?></h5>
         <p><?php echo htmlspecialchars($item['description']); ?></p>
-        <a href="#" id="addToCart" class="btn btn-danger" style="background: #d58b8b">Add to Cart</a>
+        <a id="addToCart" class="btn btn-danger" style="background: #d58b8b">Add to Cart</a>
         <a id="checkoutSingle" class="btn btn-primary">Buy Now</a>
       </div>
     </div>

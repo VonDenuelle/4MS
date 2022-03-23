@@ -6,7 +6,7 @@ $(document).ready(function () {
     let address = ''
     let sessionFlag = false
 
-    // remove modal 
+    // =================remove modal =================
     $('.modal__close').click(function () { 
         // address
         $('.modal-address').css({
@@ -21,7 +21,7 @@ $(document).ready(function () {
     });
 
 
-    // CLick Buy Now - Checks for user session
+    // ==============CLick Buy Now - Checks for user session==========
     $('#checkoutSingle').click(function () {
         $.ajax({
                 url: 'php/includes/check_user_session_for_comment.php',
@@ -55,7 +55,7 @@ $(document).ready(function () {
             })
     });
 
-    // Select Address
+    // ================Select Address============
     $('li.address-list').click(function () {
         /* Set Address to global var */
         address = $(this).text();
@@ -65,7 +65,7 @@ $(document).ready(function () {
     });
 
 
-    //Chechout with address
+    //==========Chechout with address============
     $('#finalCheckout').click(function () {
         /* If user is logged in, proceed to checkout */
         if (sessionFlag) {

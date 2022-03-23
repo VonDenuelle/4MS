@@ -7,7 +7,7 @@ $(document).ready(function () {
     // ========================Add to Cart==================
     $('#addToCart').click(function (e) {
         e.preventDefault();
-        
+
         $.ajax({
                 url: 'php/includes/add_to_cart?itemid=' + itemid,
                 type: 'POST',
@@ -15,6 +15,7 @@ $(document).ready(function () {
             })
             .done(function (data) {
                 console.log(data);
+                alert("Item Added to Cart")
             })
             .fail(function (xhr) {
                 console.log("error " + xhr.responseText + " " + xhr.responseStatus);

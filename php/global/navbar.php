@@ -35,10 +35,33 @@
                <i class="fa-solid fa-magnifying-glass"></i>
             </button>
          </div>
-        
-         <a href="/4MS/cart" class="top-icons">
+
+         <!-- <button type="button" class="btn position-relative"> -->
+         <a href="/4MS/cart" class="top-icons position-relative">
             <i class="fa-solid fa-cart-shopping"></i>
+
+            <?php 
+            require_once 'php/config.php';
+            $sql = "SELECT * FROM cart WHERE userid =".$_SESSION['userid'];
+            $query = $dbh -> query($sql);
+            $count = $query->rowCount();
+
+            if ($count > 0) {
+               // show badge
+           
+          ?>
+            <span
+               class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge">
+               <?php echo htmlspecialchars($count);?>
+               <span class="visually-hidden">Cart</span>
+            </span>
          </a>
+
+         <?php }?>
+           
+         <!-- </button> -->
+
+         
 
          <a href="/4MS/profile" class="top-icons">
             <i class="fa-solid fa-user-tie"></i>

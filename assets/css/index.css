@@ -104,16 +104,18 @@ p.rightFoot, .right{
    margin-right: 25px;
 }
 .top-icons{
-   margin: 0px 8px;
+   margin: 0px 16px;
    color: #bfbfbf;
    font-size: 30px;
    transition: all 0.2s;
-   padding: 12px;
+   padding: 4px;
 }
 .top-icons:hover{
    color: #fb771a;
 }
-
+.badge{
+   font-size: 14px !important;
+}
 /* flower */
 .flower-flex{
    display: flex;
