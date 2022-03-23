@@ -37,7 +37,7 @@
          </div>
 
          <!-- <button type="button" class="btn position-relative"> -->
-         <a href="/4MS/cart" class="top-icons position-relative">
+         <a href="/4MS/cart" class="top-icons position-relative cart-badge">
             <i class="fa-solid fa-cart-shopping"></i>
 
             <?php 
@@ -50,10 +50,7 @@
                // show badge
            
           ?>
-            <span
-               class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge">
-               <?php echo htmlspecialchars($count);?>
-               <span class="visually-hidden">Cart</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge"><?php echo htmlspecialchars($count);?>
             </span>
          </a>
 
@@ -61,8 +58,7 @@
            
          <!-- </button> -->
 
-         
-
+      
          <a href="/4MS/profile" class="top-icons">
             <i class="fa-solid fa-user-tie"></i>
          </a>

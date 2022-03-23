@@ -2,11 +2,12 @@ $(document).ready(function () {
     /* Global Variables */
     let url_string = window.location.href; //Get Current URL with Params
     let itemid = (new URL(url_string)).searchParams.get("itemid"); //encode URL and Get individual Params 
+    console.log($('.badge').text() == '');
 
 
     // ========================Add to Cart==================
     $('#addToCart').click(function (e) {
-        e.preventDefault();
+        // e.preventDefault();
 
         $.ajax({
                 url: 'php/includes/add_to_cart?itemid=' + itemid,
@@ -14,7 +15,18 @@ $(document).ready(function () {
                 dataType: 'JSON'
             })
             .done(function (data) {
-                console.log(data);
+                if ($('.badge').text() != '') {
+                    let badge = parseInt($('.badge').text()) + 1
+                    $('.badge').text(badge)
+                } else {
+                    console.log("niggas");
+                    $('.cart-badge').append(
+                        '<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge">' +
+                        1  +
+                        '</span>'   
+                        );
+                }
+               
                 alert("Item Added to Cart")
             })
             .fail(function (xhr) {
