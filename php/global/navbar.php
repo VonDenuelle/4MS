@@ -42,6 +42,8 @@
 
             <?php 
             require_once 'php/config.php';
+            if (isset($_SESSION['userid'])) {
+            
             $sql = "SELECT * FROM cart WHERE userid =".$_SESSION['userid'];
             $query = $dbh -> query($sql);
             $count = $query->rowCount();
@@ -54,7 +56,9 @@
             </span>
          </a>
 
-         <?php }?>
+         <?php 
+          }
+         }?>
            
          <!-- </button> -->
 
