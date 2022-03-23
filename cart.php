@@ -85,8 +85,8 @@ if (!isset($_SESSION['userid'])) {
                 </div>
 
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><?php echo htmlspecialchars($item['price']); ?></li>
-                    <li class="list-group-item"><?php echo htmlspecialchars($item['stock']); ?></li>
+                    <li class="list-group-item">Price: <?php echo htmlspecialchars($item['price']); ?></li>
+                    <li class="list-group-item">Stock Remaining: <?php echo htmlspecialchars($item['stock']); ?></li>
                     <li class="list-group-item">Added on
                         <?php 
                                 $date=date_create(htmlspecialchars($item['date_added']));
