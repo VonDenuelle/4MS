@@ -174,7 +174,7 @@ $(document).ready(function () {
             .done(function (data) {
                 console.log(data);
                 /* Remove div */
-                $(itemReference).parent().parent().html('')
+                $(itemReference).parent().parent().parent().parent().html('')
             })
             .fail(function (xhr) {
                 console.log("error " + xhr.responseText + " " + xhr.responseStatus);
