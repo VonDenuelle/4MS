@@ -21,7 +21,7 @@
             </li>
 
             <li class="nav-item mx-3">
-               <a class="nav-link" href="#">Delivery</a>
+               <a class="nav-link" href="#">To-Receive</a>
             </li>
          </ul>
 
