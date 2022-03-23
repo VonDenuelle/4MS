@@ -148,6 +148,7 @@ $(document).ready(function () {
                     deleteFromCart(formInputValue)
                     console.log(data);
                     // redirect to profile
+                    window.location.assign('/4MS/profile')
                 })
                 .fail(function (xhr) {
                     console.log("error " + xhr.responseText + " " + xhr.responseStatus);
