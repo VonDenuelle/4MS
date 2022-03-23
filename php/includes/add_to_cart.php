@@ -18,5 +18,5 @@ if (isset($_GET['itemid']) && isset($_SESSION['userid'])) {
         exit();
 
 } else {
-    header("Location: /4MS/home/"); /* Redirect browser */
+    header("Location: /4MS"); /* Redirect browser */
 }

@@ -29,6 +29,12 @@ if (!isset($_GET['itemid'])) {
 
 <body>
 
+  <!-- ============================================================================================================================ -->
+  <!-- Navbar -->
+
+  <?php include_once 'php/global/navbar.php'; ?>
+
+
   <?php
         require_once 'php/config.php';
 
@@ -41,16 +47,6 @@ if (!isset($_GET['itemid'])) {
             foreach ($results as $item) {
                 # code...?>
 
-  <!-- Meta Tags -->
-  <?php include_once 'php/global/head.php'; ?>
-  <!-- HEADER -->
-  <!-- ============================================================================================================================ -->
-  <!-- Navbar -->
-
-  <?php include_once 'php/global/navbar.php'; ?>
-  <div class="">
-
-  </div>
   <div class="container">
     <div class="row">
       <div class="col mx-5">
@@ -64,10 +60,9 @@ if (!isset($_GET['itemid'])) {
         <h5><?php echo htmlspecialchars($item['name']); ?></h5>
         <p><?php echo htmlspecialchars($item['description']); ?></p>
         <a href="#" id="addToCart" class="btn btn-danger" style="background: #d58b8b">Add to Cart</a>
-        <a href="#" id="checkoutSingle" class="btn btn-primary">Buy Now</a>
+        <a id="checkoutSingle" class="btn btn-primary">Buy Now</a>
       </div>
     </div>
-
 
     <?php          
           }
@@ -121,6 +116,11 @@ if (!isset($_GET['itemid'])) {
     </div>
     <!-- Copyright -->
   </footer>
+
+
+
+  <!-- =======================MODAL================== -->
+  <?php include_once 'php/global/modal.php';?>
 </body>
 
 </html>

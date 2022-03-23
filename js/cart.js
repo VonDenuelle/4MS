@@ -7,7 +7,7 @@ $(document).ready(function () {
     // ========================Add to Cart==================
     $('#addToCart').click(function (e) {
         e.preventDefault();
-
+        
         $.ajax({
                 url: 'php/includes/add_to_cart?itemid=' + itemid,
                 type: 'POST',
