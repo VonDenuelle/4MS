@@ -2,31 +2,30 @@ $(document).ready(function () {
     /* Global Variables */
     let url_string = window.location.href; //Get Current URL with Params
     let itemid = (new URL(url_string)).searchParams.get("itemid"); //encode URL and Get individual Params 
-    console.log($('.badge').text() == '');
 
 
     // ========================Add to Cart==================
-    $('#addToCart').click(function (e) {
-        // e.preventDefault();
-
+    $('#addToCart').click(function () {
         $.ajax({
                 url: 'php/includes/add_to_cart?itemid=' + itemid,
                 type: 'POST',
                 dataType: 'JSON'
             })
             .done(function (data) {
+                // check if badge on cart icon is already present
                 if ($('.badge').text() != '') {
+                    // adds one to current value
                     let badge = parseInt($('.badge').text()) + 1
                     $('.badge').text(badge)
                 } else {
-                    console.log("niggas");
+                    // adds the badge itself with value 1
                     $('.cart-badge').append(
                         '<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge">' +
                         1  +
                         '</span>'   
                         );
                 }
-               
+                
                 alert("Item Added to Cart")
             })
             .fail(function (xhr) {
@@ -85,7 +84,7 @@ $(document).ready(function () {
 
         if (quantity == 1) {
             console.log("will remove this");
-            // open modal
+            // open modal TODO
             // om click ofyes
             deleteFromCart(itemReference)
         } else {
@@ -144,11 +143,10 @@ $(document).ready(function () {
                     }
                 })
                 .done(function (data) {
+                     // redirect to profile
+                     window.location.assign('/4MS/profile')
                     /* Since it has been ordered, must be deleted from cart */
                     deleteFromCart(formInputValue)
-                    console.log(data);
-                    // redirect to profile
-                    window.location.assign('/4MS/profile')
                 })
                 .fail(function (xhr) {
                     console.log("error " + xhr.responseText + " " + xhr.responseStatus);
@@ -156,6 +154,7 @@ $(document).ready(function () {
             })
     
         } else{
+            // TODO
             console.log("must slecet ");
         }
     });
@@ -175,7 +174,7 @@ $(document).ready(function () {
             .done(function (data) {
                 console.log(data);
                 /* Remove div */
-                $(itemReference).parent().parent().parent().parent().html('')
+                $(itemReference).parent().parent().parent().html('')
             })
             .fail(function (xhr) {
                 console.log("error " + xhr.responseText + " " + xhr.responseStatus);
