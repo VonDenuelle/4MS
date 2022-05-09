@@ -34,7 +34,7 @@ $(document).ready(function () {
               $('.error').text(val);
               break;
             case 'success':
-              window.location.replace('home');
+              window.location.replace('home?page=1');
               break;
           }
         });

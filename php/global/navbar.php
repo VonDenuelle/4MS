@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
    <div class="container-fluid">
-      <a class="navbar-brand mx-4" href="/4MS/home"><img class="logo" src="assets/imgs/4M's Logo.png"></a>
+      <a class="navbar-brand mx-4" href="/4MS/home?page=1"><img class="logo" src="images/4M's-Logo.png"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3">
-               <a class="nav-link active" aria-current="page" href="/4MS/home">Home</a>
+               <a class="nav-link active" aria-current="page" href="/4MS/home?page=1">Home</a>
             </li>
 
             <li class="nav-item mx-3">
@@ -17,12 +17,9 @@
             </li>
 
             <li class="nav-item mx-3">
-               <a class="nav-link" href="#">Products</a>
+               <a class="nav-link" href="#">Gallery</a>
             </li>
 
-            <li class="nav-item mx-3">
-               <a class="nav-link" href="#">To-Receive</a>
-            </li>
          </ul>
 
          <div class="input-group searchbox">
@@ -65,6 +62,10 @@
       
          <a href="/4MS/profile" class="top-icons">
             <i class="fa-solid fa-user-tie"></i>
+         </a>
+      
+         <a href="/4MS/logout" class="top-icons">
+         <i class="fa-solid fa-right-from-bracket"></i>
          </a>
       </div>
    </div>

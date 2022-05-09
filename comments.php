@@ -22,7 +22,6 @@ if (!isset($_GET['itemid'])) {
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="js/comments.js" charset="utf-8"></script>
-<script src="js/cart.js" charset="utf-8"></script>
 <script src="js/checkout.js" charset="utf-8"></script>
 <script src="js/items.js" charset="utf-8"></script>
 </head>
@@ -57,8 +56,10 @@ if (!isset($_GET['itemid'])) {
       </div>
 
       <div class="col me-5" style="margin-top: 1in">
-        <h5><?php echo htmlspecialchars($item['name']); ?></h5>
-        <p><?php echo htmlspecialchars($item['description']); ?></p>
+        <h3 style="font-weight: 800;"><?php echo htmlspecialchars($item['name']); ?></h3>
+        <p style="font-size: 18px;"><span style="font-weight: 700;">Price: </span>₱<?php echo htmlspecialchars($item['price']); ?>.00</p>
+        <p>Stock left: <?php echo htmlspecialchars($item['stock']); ?></p>
+
         <a id="addToCart" class="btn btn-danger" style="background: #d58b8b">Add to Cart</a>
         <a id="checkoutSingle" class="btn btn-primary">Buy Now</a>
       </div>
@@ -69,7 +70,7 @@ if (!isset($_GET['itemid'])) {
       }
       ?>
 
-    <button type="button" id="writeComment" class="btn btn-outline-primary" style="margin-left: 1.1in">Write a
+    <button type="button" id="writeComment" class="btn btn-outline-primary" style="margin:10px 0 10px 1.1in;">Write a
       Comment</button>
     <div class="list-group">
       <!-- 
@@ -84,39 +85,7 @@ if (!isset($_GET['itemid'])) {
 
 
   <br>
-  <footer class="bg-dark text-center text-lg-start">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-          <h5 class="left">Company</h5>
-
-          <p class="leftFoot">4M's Flower Shop</p>
-          <p class="leftFoot">31 18 St., East Bajac-Bajac, Olongapo City </p>
-        </div>
-
-        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-          <h5 class="right">Contact</h5>
-
-          <p class="rightFoot">+639 463 315 653</p>
-          <p class="rightFoot"><a target="_blank" href="https://www.facebook.com/4msflowershop">4MS Flower Shop Facebook
-              Page</a></p>
-        </div>
-        <!--Grid column-->
-      </div>
-      <!--Grid row-->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © Jin-Doe Devs 2022
-    </div>
-    <!-- Copyright -->
-  </footer>
-
+  <?php include_once 'php/global/footer.php'; ?>  
 
 
   <!-- =======================MODAL================== -->

@@ -52,7 +52,7 @@ if (isset($_SESSION['adminid'])) {
       <div class="absolute">
 
       <button type="button" class="btn btn-outline-light btn-absolute" data-bs-toggle="tooltip" data-bs-placement="top"
-        title="GO TO OUR HOMEPAGE TO CHECK OUT OUR WEBSITE FIRST" onclick="window.location.assign('/4MS/home')">
+        title="GO TO OUR HOMEPAGE TO CHECK OUT OUR WEBSITE FIRST" onclick="window.location.assign('/4MS/home?page=1')">
         or Check our Home
       </button>
 
@@ -63,7 +63,7 @@ if (isset($_SESSION['adminid'])) {
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7 myForm">
-            <img class="logo d-block mb-4" src="assets/imgs/4M's Logo.png"
+            <img class="logo d-block mb-4" src="images/4M's-Logo.png"
               style="height: 150px; margin-left: auto; margin-right: auto">
             <h3 style="color: #b3b3b3; text-decoration: underline; text-align: center"><strong>LOGIN</strong></h3>
 

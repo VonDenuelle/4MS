@@ -5,10 +5,16 @@
    border-radius: 2px;
 }
 
-.form-check{
-   margin-top: .4in;
+.form-check-input{
+   width: 30px;
+   height: 30px;
 }
-
+.form-check-label{
+   margin: 0 10px;
+   color : #662222;
+   font-size: 20px;
+   font-weight: bold;
+}
 .card{
    border-width: 3px;
    border-style: groove;
@@ -48,4 +54,18 @@ button.add, button.minus, button.delete{
    border-radius: 4px;
    color: whitesmoke;
    height: .5in;
+   width: 100%;
+   margin: 10px auto;
 }
+
+.disabled-button{
+   color :#959595 !important; 
+   background-color: rgb(61 69 75) !important;
+}
+
+/* push footer down even without contetn */
+
+/* footer{
+   position: absolute;
+   bottom: 0;
+} */

@@ -1,0 +1,39 @@
+footer {
+    background-color: #222;
+    position: relative;  
+    font-size: 14px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+    color: antiquewhite ;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+
+ 
+ 
+ p.leftFoot, .left{
+    text-align: right;
+ }
+ 
+ p.rightFoot, .right{
+    text-align: left;
+ }
+ 
+ .left, .right{
+    text-decoration: underline;
+ }

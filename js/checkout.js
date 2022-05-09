@@ -2,9 +2,16 @@ $(document).ready(function () {
     /* Global Variables */
     let url_string = window.location.href; //Get Current URL with Params
     let itemid = (new URL(url_string)).searchParams.get("itemid"); //encode URL and Get individual Params 
-
-    let address = ''
     let sessionFlag = false
+    
+    /* gets active address upon opening modal for setting default address 
+    before user clocks on any address */
+    let address = ''
+   if ($('li.address-list').hasClass('active-address')) {
+       address = $('li.address-list').text()
+   } 
+
+   console.log(address);
 
     // =================remove modal =================
     $('.modal__close').click(function () { 
@@ -41,6 +48,7 @@ $(document).ready(function () {
                             sessionFlag = true
                             break;
                         case "sessionnotpresent":
+                            /* Go to login or register */
                             $('.modal-class').css({
                                 'visibility': 'visible',
                                 'opacity': '1'
@@ -58,6 +66,7 @@ $(document).ready(function () {
     // ================Select Address============
     $('li.address-list').click(function () {
         /* Set Address to global var */
+        console.log(address);
         address = $(this).text();
 
         $('li.address-list').removeClass('active-address');
@@ -65,8 +74,9 @@ $(document).ready(function () {
     });
 
 
-    //==========Chechout with address============
+    //==========Single Chechout with address============
     $('#finalCheckout').click(function () {
+        console.log(address);
         /* If user is logged in, proceed to checkout */
         if (sessionFlag) {
             $.ajax({

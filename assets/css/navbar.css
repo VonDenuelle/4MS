@@ -32,23 +32,6 @@ ul.pagination li a{
     color: aliceblue !important;
  }
 
- footer{
-   color: antiquewhite !important;
-}
-
-
-p.leftFoot, .left{
-   text-align: right;
-}
-
-p.rightFoot, .right{
-   text-align: left;
-}
-
-.left, .right{
-   text-decoration: underline;
-}
-
 
 nav{
 

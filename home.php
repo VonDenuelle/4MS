@@ -1,12 +1,18 @@
 <?php
    session_start();
+
+   if(!isset($_GET['page'])){
+      header('location: /4ms/home?page=1');
+   }
 ?>
    <!-- Meta Tags -->
    <?php include_once 'php/global/head.php'; ?>
    
    <title>4MS Flower Shop | Home</title>
       <!-- CSS -->
+  
       <link rel="stylesheet" href="assets/css/home.css">
+
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   
@@ -35,15 +41,15 @@
 
          <div class="carousel-inner">
             <div class="carousel-item active">
-               <img class="slideshow" src="assets/imgs/1.jpg" class="d-block w-100">
+               <img class="slideshow" src="images/flowers/1.jpg" class="d-block w-100">
             </div>
 
             <div class="carousel-item">
-               <img class="slideshow" src="assets/imgs/2.jpg" class="d-block w-100">
+               <img class="slideshow" src="images/flowers/2.jpg" class="d-block w-100">
             </div>
 
             <div class="carousel-item">
-               <img class="slideshow" src="assets/imgs/3.jpg" class="d-block w-100">
+               <img class="slideshow" src="images/flowers/3.jpg" class="d-block w-100">
             </div>
 
          </div>
@@ -99,16 +105,25 @@
       <!-- ============================================================================================================================ -->
       <!-- Products -->
       <div class="container products mt-4 mb-4">
+
+
          <div class="row">
-            <div class="col-lg-11 mx-auto">
+            <div class="col-lg-11 mx-auto">         
                <nav class="navbar">
                   <h3 class="ms-3">Flower Picking</h3> 
                   <ul class="pagination mt-2 me-3">
-                     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                     <li class="page-item"><a class="page-link" href="#">1</a></li>
-                     <li class="page-item"><a class="page-link" href="#">2</a></li>
-                     <li class="page-item"><a class="page-link" href="#">3</a></li>
-                     <li class="page-item"><a class="page-link" href="#">Next</a></li>
+
+                  <?php
+            require_once 'php/config.php';
+            $perPage = 10;
+
+            $stmt = $dbh->query('SELECT count(*) FROM items');
+            $total_results = $stmt->fetchColumn();
+            $total_pages = ceil($total_results / $perPage);
+
+            for ($i=1; $i <= $total_pages; $i++) { ?>
+                     <li class="page-item"><a class="page-link" href="/4ms/home?page=<?php echo $i;?>"> <?php echo $i;?></a></li>
+                  <?php  } ?>
                   </ul>
                </nav>
             </div>
@@ -119,12 +134,22 @@
          <div class="container flower-flex">
             <?php
             require_once 'php/config.php';
+            $perPage = 10;
 
-            $sql ="SELECT * FROM items ORDER BY date_added DESC";
+            $stmt = $dbh->query('SELECT count(*) FROM items');
+            $total_results = $stmt->fetchColumn();
+            $total_pages = ceil($total_results / $perPage);
+
+              // Current page
+            $page = isset($_GET['page']) ? $_GET['page'] : 1;
+            $starting_limit = ($page - 1) * $perPage;
+            
+            
+            $sql ="SELECT * FROM items ORDER BY date_added DESC LIMIT $starting_limit,$perPage";
             $query = $dbh -> query($sql);
+            
             $results=$query->fetchAll(PDO::FETCH_ASSOC);
             $rowcount=$query->rowCount();
-
             if ($rowcount > 0) {
                foreach ($results as $item) {
                      # code...?>

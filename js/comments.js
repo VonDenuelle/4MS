@@ -20,8 +20,8 @@ $(document).ready(function () {
           switch (index) {
             case "sessionispressent":
               $(".list-group").prepend('<div class="mb-3"><form id="writeCommentForm"> ' +
-                '<input type="text" class="form-control" id="writeCommentInput" placeholder="name@example.com" required> ' +
-                '<input type="submit" value="Submit">' +
+                '<input type="text" class="form-control" id="writeCommentInput" placeholder="My Comment" required> ' +
+                '<input type="submit"  class="btn btn-success" value="Submit">' +
                 '</form></div>')
               /* focus on input upon appearing*/
               $("#writeCommentInput").focus()
@@ -114,6 +114,84 @@ $(document).ready(function () {
         console.log("error:" + error + " status:" + status + " response:" + xhr.responseText + " xhrStatus: " + xhr.status);
       });
   }
+
+  
+    // ========================Add to Cart==================
+    $('#addToCart').click(function () {
+      // checks if there is session first
+      $.ajax({
+              url: 'php/includes/check_user_session_for_comment.php',
+              type: 'POST',
+              dataType: 'JSON'
+          })
+          .done(function (data) {
+              console.log(data);
+              $.map(data, function (val, index) {
+                  switch (index) {
+                      case "sessionispressent":
+                          /* if session is prsent*/
+
+                          // check if item already exist on cart
+                          $.ajax({
+                            url: 'php/includes/check_if_item_exist_on_cart?itemid=' + itemid,
+                            type: 'POST',
+                            dataType: 'JSON'
+                        })
+                        .done(function (data) {
+                            if (data.itemcartstatus == 'Item is already present') { // add quantity to existing item on cart
+                              alert("Item Added to Cart")
+                            } else {  // add new item since it doesnt exist yet
+                              $.ajax({
+                                url: 'php/includes/add_to_cart?itemid=' + itemid,
+                                type: 'POST',
+                                dataType: 'JSON'
+                            })
+                            .done(function (data) {
+                                // check if badge on cart icon is already present
+                                if ($('.badge').text() != '') {
+                                    // adds one to current value
+                                    let badge = parseInt($('.badge').text()) + 1
+                                    $('.badge').text(badge)
+                                } else {
+                                    // adds the badge itself with value 1
+                                    $('.cart-badge').append(
+                                        '<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge">' +
+                                        1 +
+                                        '</span>'
+                                    );
+                                }
+
+                                alert("Item Added to Cart")
+                            })
+                            .fail(function (xhr) {
+                                console.log("error " + xhr.responseText + " " + xhr.responseStatus);
+                            })
+                            }
+                        })
+                        .fail(function (xhr) {
+                            console.log("error " + xhr + "  dwf  " + xhr.responseText + " " + xhr.responseStatus);
+                        })
+
+                        
+
+                          break;
+                      case "sessionnotpresent":
+                          $('.modal-class').css({
+                              'visibility': 'visible',
+                              'opacity': '1'
+                          });
+
+                          break;
+                  }
+              });
+          })
+          .fail(function (xhr) {
+              console.log("error " + xhr.responseText + " " + xhr.responseStatus);
+          })
+
+
+
+  });
 
 
   function htmlEncode(source) {
