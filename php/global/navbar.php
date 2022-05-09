@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
    <div class="container-fluid">
-      <a class="navbar-brand mx-4" href="/4MS/home"><img class="logo" src="assets/imgs/4M's Logo.png"></a>
+      <a class="navbar-brand mx-4" href="/4MS/home"><img class="logo" src="assets/imgs/logo.png"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
