@@ -37,33 +37,33 @@
          <a href="/4MS/cart" class="top-icons position-relative cart-badge">
             <i class="fa-solid fa-cart-shopping"></i>
 
-            <?php 
+            <?php
             require_once 'php/config.php';
             if (isset($_SESSION['userid'])) {
-            
+
             $sql = "SELECT * FROM cart WHERE userid =".$_SESSION['userid'];
             $query = $dbh -> query($sql);
             $count = $query->rowCount();
 
             if ($count > 0) {
                // show badge
-           
+
           ?>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge"><?php echo htmlspecialchars($count);?>
             </span>
          </a>
 
-         <?php 
+         <?php
           }
          }?>
-           
+
          <!-- </button> -->
 
-      
+
          <a href="/4MS/profile" class="top-icons">
             <i class="fa-solid fa-user-tie"></i>
          </a>
-      
+
          <a href="/4MS/logout" class="top-icons">
          <i class="fa-solid fa-right-from-bracket"></i>
          </a>
