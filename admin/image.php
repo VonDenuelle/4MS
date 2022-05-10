@@ -20,7 +20,7 @@
 				<div class="col">
 					<h1>Add Product</h1><hr>
 					<form enctype="multipart/form-data" id="uploadForm">
-						<img id="image" src="../images/200.jpg" width="100px" class="img-thumbnail" alt="..."><br>
+						<img id="image" src="../images/200.png" width="100px" class="img-thumbnail" alt="..."><br>
 						<input type="file" oninput="image.src=window.URL.createObjectURL(this.files[0])" name="file" id="file"> <br>
 						
 						<div class="row mt-3">
