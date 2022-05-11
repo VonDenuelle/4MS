@@ -17,7 +17,7 @@
             </li>
 
             <li class="nav-item mx-3">
-               <a class="nav-link" href="#">Gallery</a>
+               <a class="nav-link" href="gallery">Gallery</a>
             </li>
 
          </ul>
