@@ -83,6 +83,7 @@ $(document).ready(function () {
 
         let btnStatus = ''
         let dateUpdated = ''
+        let eta = ''
         $('#item-holder').html('') // resets
         $('#h1').text('')
         $('.load').addClass('loader');
@@ -113,18 +114,23 @@ $(document).ready(function () {
                             if (val.status == 'Pending') {
                                 btnStatus = '<button type="button" data-id="'+ val.id +'" class="btn btn-danger cancelOrder">Cancel Order</button>'
                                 dateUpdated=''
+                                eta=''
                             } else if (val.status == 'To Receive'){
+                                eta = '<p class="card-text"><small class="text-muted">Estimated Time of Arrival : ' + val.ETA + ' Minutes</small></p> ' 
                                 btnStatus = '<button type="button"  data-id="'+ val.id +'"  class="btn btn-dark orderReceived">Order Received</button>'
                                 dateUpdated =  '<p class="card-text"><small class="text-muted">Date Accepted : ' + moment(val.date_updated, 'YYYY-MM-DD HH:mm:ss').format('dddd, Do MMM YYYY - hh:mm A') + '</small></p>'
                             } else if (val.status == 'Canceled') {
+                                eta = ''
                                 btnStatus=''
                                 dateUpdated =  '<p class="card-text"><small class="text-muted">Date Canceled : ' + moment(val.date_updated, 'YYYY-MM-DD HH:mm:ss').format('dddd, Do MMM YYYY - hh:mm A') + '</small></p>'
                             } else if (val.status == 'Finished') {
                                 btnStatus=''
+                                eta=''
                                 dateUpdated =  '<p class="card-text"><small class="text-muted">Delivered on : ' + moment(val.date_updated, 'YYYY-MM-DD HH:mm:ss').format('dddd, Do MMM YYYY - hh:mm A') + '</small></p>'
                             }  else {
                                 btnStatus=''
                                 dateUpdated = ''
+                                eta = ''
                             }
                             $('#item-holder').append(
                                 '<div class="card mb-3" style="max-width: 740px;"><div class="row g-0"><div class="col-md-4">' +
@@ -135,7 +141,7 @@ $(document).ready(function () {
                                 '<p class="card-text">Address to be delivered : ' + val.address + '</p> <br>' +
                                 '<p class="card-text"><small class="text-muted">Date Ordered : ' + moment(val.date_added, 'YYYY-MM-DD HH:mm:ss').format('dddd, Do MMM YYYY - hh:mm A') + '</small></p>' +
                                 dateUpdated +
-                                '<p class="card-text"><small class="text-muted">Estimated Time of Arrival : ' + val.ETA + ' Minutes</small></p> ' +
+                                eta +
                                 '<br><p class="card-text"><small class="text-muted">Status : ' + val.status + '</small></p>' +
                                 '</div></div></div>' + btnStatus +
                                 '</div>'
