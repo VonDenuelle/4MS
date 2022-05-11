@@ -14,6 +14,7 @@ if (!isset($_SESSION['userid'])) {
 
 <link rel="stylesheet" href="assets/css/navbar.css">
 <link rel="stylesheet" href="css/profile.css">
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -23,10 +24,9 @@ if (!isset($_SESSION['userid'])) {
 
     <!-- MOMENT JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-<script src="js/items.js" charset="utf-8"></script>
-<script src="js/profile.js" charset="utf-8"></script>
-</head>
+    <script src="js/items.js" charset="utf-8"></script>
+    <script src="js/profile.js" charset="utf-8"></script>
+    </head>
 
 <body>
 
@@ -77,11 +77,13 @@ if (!isset($_SESSION['userid'])) {
                         <h5 style="font-weight:bold;">Contact Details</h5>
                         <br>
 
-                        <p class="card-text">Address:
+                        <p class="card-text edit_first_address">Address:
                             <?php echo htmlspecialchars($results['address1'])?>
+                            <i id="firstAddress" class="fa-solid fa-pen-to-square"></i>
                         </p>
-                        <p class="card-text">Secondary Address:
+                        <p class="card-text edit_second_address">Secondary Address:
                             <?php echo htmlspecialchars($results['address2'])?>
+                            <i id="secondAddress" class="fa-solid fa-pen-to-square"></i>
                         </p>
                         <p class="card-text">
                             <small class="text-muted">Email:
@@ -113,13 +115,15 @@ if (!isset($_SESSION['userid'])) {
         </div>
 
 
-        <div id="item-holder">
+    <div id="item-holder">
         
-        </div>
+   </div>
+
         <div class="load"></div>
         <h1 id="h1" style="margin: 50px 0;"></h1>
- 
     </div>
+
+    <?php include_once 'php/global/modal.php'; ?>   
 
     <?php include_once 'php/global/footer.php'; ?>   
 

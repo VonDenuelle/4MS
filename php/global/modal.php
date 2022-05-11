@@ -21,6 +21,53 @@
 </div>
 
 
+
+
+
+
+
+<!-- for changing address on profile -->
+
+<div id="modal-edit-address" class="modal-edit-address">
+    <div class="modal__content">
+
+        <h1>Edit your address</h1>
+        <form id="editAddress">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Address</span>
+
+                <input type="text" id="myAddress" class="form-control" placeholder="Address" aria-label="Address"
+                    aria-describedby="basic-addon1">
+
+            </div>
+
+            <div class="modal__footer">
+                <input class="btn btn-outline-dark" type="submit" value="Submit">
+            </div>
+        </form>
+        <a class="modal__close">&times;</a>
+
+    </div>
+</div>
+
+
+
+<!-- for deleting confirmation -->
+
+<div id="modal-delete-confirmation" class="modal-delete-confirmation">
+    <div class="modal__content">
+
+        <h1>Are you sure you want to delete?</h1>
+
+            <div class="modal__footer">
+                <input class="btn btn-danger delete" type="submit" value="Delete">
+            </div>
+    
+        <a class="modal__close">&times;</a>
+
+    </div>
+</div>
+
 <!-- for address selection -->
 
 <div id="modal-address" class="modal-address">

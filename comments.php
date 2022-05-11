@@ -61,7 +61,9 @@ if (!isset($_GET['itemid'])) {
         <p>Stock left: <?php echo htmlspecialchars($item['stock']); ?></p>
 
         <a id="addToCart" class="btn btn-danger" style="background: #d58b8b">Add to Cart</a>
-        <a id="checkoutSingle" class="btn btn-primary">Buy Now</a>
+        <a id="checkoutSingle" 
+        data-price="<?php echo htmlspecialchars($item['price']);?>" 
+        class="btn btn-primary">Buy Now</a>
       </div>
     </div>
 

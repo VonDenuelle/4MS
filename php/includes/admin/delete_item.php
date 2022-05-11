@@ -1,25 +1,25 @@
 <?php
 require_once '../../config.php';
 
-if (isset($_GET['itemid']) && isset($_GET['image'])) {
+
+if (isset($_POST['itemid']) && isset($_POST['image'])) {
     $sql = "DELETE FROM items WHERE id = ?";
     $stmt = $dbh->prepare($sql);
 
-    $path = "../../../images/flowers/".$_GET['image'];
+    $path = "../../../images/flowers/".$_POST['image'];
     
-    if ($stmt->execute([$_GET['itemid']]) && unlink($path)) {
+    if ($stmt->execute([$_POST['itemid']]) && unlink($path)) {
         $error = ["success" => "success"];
         echo json_encode($error);
 
-        header("Location: /Temp"); /* Redirect browser */
         exit();
     }else{
         $error = ["cantdelete" => "Unable to delete item"];
         echo json_encode($error);
 
-        header("Location: /Temp"); /* Redirect browser */
+
         exit();
     }
 } else {
-    header("Location: /Temp/home/"); /* Redirect browser */
+    header("Location: /4ms"); /* Redirect browser */
 }

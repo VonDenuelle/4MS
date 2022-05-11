@@ -3,7 +3,8 @@ $(document).ready(function () {
     let url_string = window.location.href; //Get Current URL with Params
     let itemid = (new URL(url_string)).searchParams.get("itemid"); //encode URL and Get individual Params 
     let sessionFlag = false
-    
+
+    let totalPrice
     /* gets active address upon opening modal for setting default address 
     before user clocks on any address */
     let address = ''
@@ -30,6 +31,10 @@ $(document).ready(function () {
 
     // ==============CLick Buy Now - Checks for user session==========
     $('#checkoutSingle').click(function () {
+        let formInputValue = this //so it can be accessible inside ajax function, put the reference to a variable
+
+        totalPrice = parseInt($(formInputValue).attr('data-price')) 
+
         $.ajax({
                 url: 'php/includes/check_user_session_for_comment.php',
                 type: 'POST',
@@ -79,12 +84,14 @@ $(document).ready(function () {
         console.log(address);
         /* If user is logged in, proceed to checkout */
         if (sessionFlag) {
+            
             $.ajax({
                 url: 'php/includes/single_checkout?itemid=' + itemid,
                 type: 'POST',
                 dataType: 'JSON',
                 data: {
-                    address: address
+                    address: address,
+                    total_price : totalPrice
                 }
             })
             .done(function (data) {

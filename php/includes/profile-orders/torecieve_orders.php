@@ -18,9 +18,11 @@ if (isset($_SESSION['userid'])) {
     i.description as description,
     i.image as image,
     i.stock as stock,
+    o.id,
     o.quantity,
     o.date_added,
     o.status,
+    o.date_updated,
     o.address,
     o.total_price as price
     FROM orders o

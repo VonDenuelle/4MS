@@ -6,10 +6,12 @@
 
 body {
    background-color: #eee
+
 }
 
 .nav{
    position: relative;
+   
 }
 
 .nav-link:hover {
@@ -26,6 +28,7 @@ body {
 
 .d-flex{
    background-color:  rgb(30, 39, 46) !important;
+   position: fixed;
 }
 
 img.logo{

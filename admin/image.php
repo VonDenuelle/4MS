@@ -1,20 +1,21 @@
 <html>
 	<head>
-		<title>Image Upload with AJAX, PHP and MYSQL</title>
+		<title>Add Product</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel="stylesheet" href="../css/admin/image.css">
 		<link rel="stylesheet" href="../css/admin/sidenav.css">
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<script src="js/image.js"></script>
+		<script src="../js/image.js"></script>
 	</head>
 
 	<body>
+		<!-- SIDE NAV -->
+		<?php include_once '../php/global/sidenav.php'; ?>
 
-		<div class="container-fluid">
+		<div class="container-fluid" style="width: calc(100% - 250px); margin-left: 250px;">
 			<div class="row flex-nowrap">
-				<!-- SIDE NAV -->
-				<?php include_once '../php/global/sidenav.php'; ?>
+		
 				
 				<!-- 2ND COL -->
 				<div class="col">
@@ -26,39 +27,27 @@
 						<div class="row mt-3">
 							<div class="col">
 								<label>Product Name:</label>
-								<input  name="name" value="name"/>
+								<input  name="name" placeholder="name"/>
 							</div>
 		
 							<div class="col">
 								<label>Product Description:</label>
-								<input name="description" value="description"/>
+								<textarea name="description" placeholder="description"></textarea>
 							</div>
 
 							<div class="col">
-								<label>Product Price:</label>
-								<input name="price" value="10"/>
-							</div>
-						</div>
-
-						<div class="row mt-3">
-							<div class="col">
-								<label>Product Color:</label>
-								<input  name="color" value="color"/>
-							</div>
-
-							<div class="col">
-								<label>Product Custom:</label>
-								<input  name="custom" value="true"/>
+								<label>Product Price ₱:</label>
+								<input type="number" name="price" placeholder="10"/>
 							</div>
 
 							<div class="col">
 								<label>Product Quantity:</label>
-								<input  name="stock" value="101"/>
+								<input type="number" name="stock" placeholder="101"/>
 							</div>
 						</div>
-
-						<input class="mt-3" type="submit" name="submit" value="Input Product">
-
+						
+						<input class="mt-3 btn btn-success" type="submit" name="submit" value="Input Product">
+						<div class="bar error"></div>
 					</form>
 				</div>
 			</div>

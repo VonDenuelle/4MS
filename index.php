@@ -8,7 +8,7 @@ if (isset($_SESSION['userid'])) {
 
 //checks if admin is  logged in
 if (isset($_SESSION['adminid'])) {
-    header("Location: /4MS/admin");
+    header("Location: /4MS/admin/dashboard");
 }
 ?>
 
@@ -32,8 +32,10 @@ if (isset($_SESSION['adminid'])) {
   <title>4MS Flower Shop</title>
   <!-- CSS -->
   <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-
+  <link rel="stylesheet" href="css/modal.css">
+  <!-- <link rel="stylesheet" href="css/footer.css"> -->
   <link rel="stylesheet" href="css/index.css">
+
 
   <!-- script -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" crossorigin="anonymous">
@@ -84,6 +86,8 @@ if (isset($_SESSION['adminid'])) {
                 <span class="btn-link" onclick="window.open('/4MS/register', '_blank')"> Create here
                 </span>
               </div>
+              <div class="btn btn-dark adminBtn" style="color: #b3b3b3">Admin 
+              </div>
             </form>
 
 
@@ -96,7 +100,40 @@ if (isset($_SESSION['adminid'])) {
   </div>
 
 
-  <footer>
+
+
+
+  
+<!-- for admin credentials -->
+
+<div id="modal-admin" class="modal-admin">
+    <div class="modal__content">
+
+        <h1>Signin as Admin</h1>
+        <form id="adminSignin">
+            <div class="form-group first">
+                <label style="color: #b3b3b3" for="username">Username</label>
+                <input type="text" class="form-control" placeholder="Your Username" id="adminUsername">
+            </div>
+            <div class="form-group last mb-3">
+                <label style="color: #b3b3b3" for="password">Password</label>
+                <input type="password" class="form-control" placeholder="Your Password" id="adminPassword">
+            </div>
+
+
+
+            <div class="barAdmin errorAdmin"></div>
+
+            <div class="modal__footer">
+                <input type="submit" value="Log In" class="btn btn-block btn-danger" style="background: #d58b8b">
+            </div>
+        </form>
+        <a class="modal__close">&times;</a>
+
+    </div>
+</div>
+
+<footer>
     <p style="background-color: rgba(0, 0, 0, 0.2)">
       Located at #31 18th St., East Bajac-Bajac Olongapo
       <a target="_blank" href="https://www.facebook.com/4msflowershop">4MS Flower Shop</a>
@@ -104,6 +141,7 @@ if (isset($_SESSION['adminid'])) {
       <a target="_blank" href="https://www.facebook.com/4msflowershop/reviews/?ref=page_internal">here</a>.
     </p>
   </footer>
+
 </body>
 
 </html>
