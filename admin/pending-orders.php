@@ -1,13 +1,29 @@
+<?php
+   session_start();
+
+   if(!isset($_SESSION['adminid'])){
+      header('location: /4ms');
+   }
+?>
+
 <html>
 	<head>
 		<title>Pending Orders</title>
+	
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel="stylesheet" href="../css/admin/sidenav.css">
+		<link rel="stylesheet" href="../css/admin/pending-orders.css">
 		<!-- <link rel="stylesheet" href="../css/admin/orders.css"> -->
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 			<script src="../js/orders.js"></script>
+
+		<!-- font awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+		integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
 	</head>
 
 	<body>
@@ -23,7 +39,7 @@
 				</div>
 			</div>
 
-
+			<i style="color:black" class="fa-solid fa-watch"></i>
 			<a href="pending-orders" class="btn btn-primary">Pending Orders</a>
 			<a href="waiting-orders" class="btn btn-outline-primary">Waiting Orders</a>
 			<a href="finished-orders" class="btn btn-outline-primary">Finished Orders</a>
@@ -31,7 +47,7 @@
 			<br>
 			<?php
 				  require_once '../php/config.php';
-				  session_start();
+		
 				  
 				  $sql = 'SELECT 
 				  i.name as itemname,
@@ -46,6 +62,7 @@
 				  o.date_added,
 				  o.status,
 				  o.address,	
+				  o.itemid,
 				  o.total_price as price
 				  FROM orders o
 				  LEFT JOIN items i on o.itemid = i.id    
@@ -101,8 +118,21 @@
                                 <?php echo htmlspecialchars($item['status'])?>
                             </small>
                         </p>
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-stopwatch"></i></span>
+							<input type="number" class="form-control eta" placeholder="Estimated Time of Arrival (E.T.A.)" aria-label="ETA" aria-describedby="basic-addon1">
+							<span class="input-group-text">Minutes</span>
 
-						<button data-id="<?php echo htmlspecialchars($item['id'])?>" class="btn btn-success accept">Accept Order</button>
+						</div>
+
+						<div class="bar error"></div>
+
+						<button 
+						data-id="<?php echo htmlspecialchars($item['id'])?>"
+						data-stock="<?php echo htmlspecialchars($item['stock'])?>"
+						data-itemid="<?php echo htmlspecialchars($item['itemid'])?>"
+						data-quantity="<?php echo htmlspecialchars($item['quantity'])?>"
+						 class="btn btn-success accept">Accept Order</button>
                     </div>
                 </div>
             </div>

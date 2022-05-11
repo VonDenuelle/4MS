@@ -16,4 +16,4 @@ if (isset($_SESSION['userid'])) {
         exit();
 } else {
     header("Location: /4MS/home/"); /* Redirect browser */
-}
+}   

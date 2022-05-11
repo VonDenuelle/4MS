@@ -111,7 +111,7 @@ $(document).ready(function () {
                                 'height': 'auto',
                             })
                             if (val.status == 'Pending') {
-                                btnStatus = '<button type="button" data-id="'+ val.id +'" class="btn btn-dark cancelOrder">Cancel Order</button>'
+                                btnStatus = '<button type="button" data-id="'+ val.id +'" class="btn btn-danger cancelOrder">Cancel Order</button>'
                                 dateUpdated=''
                             } else if (val.status == 'To Receive'){
                                 btnStatus = '<button type="button"  data-id="'+ val.id +'"  class="btn btn-dark orderReceived">Order Received</button>'
@@ -135,7 +135,8 @@ $(document).ready(function () {
                                 '<p class="card-text">Address to be delivered : ' + val.address + '</p> <br>' +
                                 '<p class="card-text"><small class="text-muted">Date Ordered : ' + moment(val.date_added, 'YYYY-MM-DD HH:mm:ss').format('dddd, Do MMM YYYY - hh:mm A') + '</small></p>' +
                                 dateUpdated +
-                                '<p class="card-text"><small class="text-muted">Status : ' + val.status + '</small></p>' +
+                                '<p class="card-text"><small class="text-muted">Estimated Time of Arrival : ' + val.ETA + ' Minutes</small></p> ' +
+                                '<br><p class="card-text"><small class="text-muted">Status : ' + val.status + '</small></p>' +
                                 '</div></div></div>' + btnStatus +
                                 '</div>'
                             )
@@ -170,6 +171,7 @@ $(document).ready(function () {
           }
         })
        .done(function(data) {
+           console.log(data);
             window.location.assign('profile')
        })
        .fail(function (xhr) {

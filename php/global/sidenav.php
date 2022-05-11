@@ -7,7 +7,7 @@
       <li> <a href="image" class="nav-link text-white"> <i class="fa fa-cog"></i><span class="ms-2">Add Product</span> </a> </li>
       <li> <a href="items" class="nav-link text-white"> <i class="fa fa-bookmark"></i><span class="ms-2">Product List</span> </a> </li>
       <li> 
-         <a class="nav-link dropdown-toggle" href="sales.php" class="nav-link text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+         <a class="nav-link dropdown-toggle" href="#" class="nav-link text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
             <i class="fa fa-bookmark"></i><span class="ms-2">Sales</span> 
          </a> 
          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

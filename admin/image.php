@@ -1,3 +1,11 @@
+<?php
+   session_start();
+
+   if(!isset($_SESSION['adminid'])){
+      header('location: /4ms');
+   }
+?>
+
 <html>
 	<head>
 		<title>Add Product</title>
@@ -7,6 +15,10 @@
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 		<script src="../js/image.js"></script>
+			<!-- font awesome -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+		integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
 
 	<body>

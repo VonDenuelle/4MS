@@ -14,10 +14,11 @@
    </head>
 
    <body>
-		<div class="container-fluid">
+   <?php include_once '../../php/global/sidenavtb_page.php'; ?>
+
+		<div class="container-fluid" style="width: calc(100% - 250px); margin-left: 250px;">
 			<div class="row flex-nowrap">
 				<!-- SIDE NAV -->
-            <?php include_once '../../php/global/sidenavtb_page.php'; ?>
 				
 				<!-- 2ND COL -->
 				<div class="col">
