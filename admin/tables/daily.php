@@ -1,7 +1,14 @@
+<?php
+   session_start();
+
+   if(!isset($_SESSION['adminid'])){
+      header('location: /4ms');
+   }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Daily Sales</title>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,16 +21,18 @@
    </head>
 
    <body>
-   <?php include_once '../../php/global/sidenavtb_page.php'; ?>
-
-		<div class="container-fluid" style="width: calc(100% - 250px); margin-left: 250px;">
+      <!-- SIDE NAV -->
+      <?php include_once '../../php/global/sidenavtb_page.php'; ?>
+      <div class="container-fluid" style="width: calc(100% - 250px); margin-left: 250px;">
 			<div class="row flex-nowrap">
-				<!-- SIDE NAV -->
+				
 				
 				<!-- 2ND COL -->
-				<div class="col">
-					<h1>Daily Sales Report</h1><hr>
+				<div class="col">  
+                  <h1>Daily Sales Report</h1>	
+               <hr>
                <table class="table table-hover">
+                  <a href="print" target="__blank" class="btn btn-primary" style="width: 200px;">Print</a>
                   <thead>
                      <tr>
                         <th scope="col">Product Name</th>

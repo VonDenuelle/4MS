@@ -11,10 +11,10 @@
             <i class="fa fa-bookmark"></i><span class="ms-2">Sales</span> 
          </a> 
          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="tables/daily">Daily Sales</a></li>
-            <li><a class="dropdown-item" href="tables/weekly">Weekly Sales</a></li>
+            <li><a class="dropdown-item" href="tables/print" target="__blank">Daily Sales</a></li>
+            <!-- <li><a class="dropdown-item" href="tables/weekly">Weekly Sales</a></li>
             <li><a class="dropdown-item" href="tables/monthly">Monthly Sales</a></li>
-            <li><a class="dropdown-item" href="tables/yearly">Yearly Sales</a></li>
+            <li><a class="dropdown-item" href="tables/yearly">Yearly Sales</a></li> -->
          </ul>
       </li>
    </ul>

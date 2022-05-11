@@ -11,9 +11,9 @@
          </a> 
          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="daily">Daily Sales</a></li>
-            <li><a class="dropdown-item" href="weekly">Weekly Sales</a></li>
+            <!-- <li><a class="dropdown-item" href="weekly">Weekly Sales</a></li>
             <li><a class="dropdown-item" href="monthly">Monthly Sales</a></li>
-            <li><a class="dropdown-item" href="yearly">Yearly Sales</a></li>
+            <li><a class="dropdown-item" href="yearly">Yearly Sales</a></li> -->
          </ul>
       </li>
    </ul>
