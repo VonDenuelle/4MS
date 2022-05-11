@@ -1,24 +1,13 @@
-<?php
-   session_start();
-
-   if(!isset($_SESSION['adminid'])){
-      header('location: /4ms');
-   }
-?>
-
 <html>
 	<head>
 		<title>Add Product</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 		<link rel="stylesheet" href="../css/admin/image.css">
 		<link rel="stylesheet" href="../css/admin/sidenav.css">
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 		<script src="../js/image.js"></script>
-			<!-- font awesome -->
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-		integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
 
 	<body>

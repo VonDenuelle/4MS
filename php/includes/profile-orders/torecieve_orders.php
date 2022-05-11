@@ -24,7 +24,6 @@ if (isset($_SESSION['userid'])) {
     o.status,
     o.date_updated,
     o.address,
-    o.ETA,
     o.total_price as price
     FROM orders o
     LEFT JOIN items i on o.itemid = i.id 

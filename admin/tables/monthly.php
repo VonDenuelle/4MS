@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Monthly Sales</title>
+      <title>Daily Sales</title>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +14,11 @@
    </head>
 
    <body>
-      				<!-- SIDE NAV -->
-                  <?php include_once '../../php/global/sidenavtb_page.php'; ?>
+      <!-- SIDE NAV -->
+      <?php include_once '../../php/global/sidenavtb_page.php'; ?>
 		<div class="container-fluid" style="width: calc(100% - 250px); margin-left: 250px;">
 			<div class="row flex-nowrap">
-
+				
 				
 				<!-- 2ND COL -->
 				<div class="col">

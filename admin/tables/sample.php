@@ -1,3 +1,8 @@
+<?php
+
+require '../../php/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -14,35 +19,55 @@
    </head>
 
    <body>
-      <!-- SIDE NAV -->
-      <?php include_once '../../php/global/sidenavtb_page.php'; ?>
+<!-- SIDE NAV -->
+<?php include_once '../../php/global/sidenavtb_page.php'; ?>
       <div class="container-fluid" style="width: calc(100% - 250px); margin-left: 250px;">
 			<div class="row flex-nowrap">
 				
 				
 				<!-- 2ND COL -->
 				<div class="col">
-					<h1>Weekly Sales Report</h1><hr>
+               
+					<h1>Sample Print</h1><hr>
+               <?php
+                  $query = "SELECT * FROM items";
+                  $data = $dbh->query($query);
+               ?>
                <table class="table table-hover">
                   <thead>
+                  
                      <tr>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Customer</th>
-                        <th scope="col">Customer Address</th>
-                        <th scope="col">Date Purchased</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">name</th>
+                        <th scope="col">description</th>
+                        <th scope="col">image</th>
+                        <th scope="col">price</th>
+                        <th scope="col">stock</th>
+                        <th scope="col">date_added</th>
                      </tr>
                   </thead>
+
                   <tbody>
-                     <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                     </tr>
+                  <?php foreach($data as $row)
+                  {
+                  ?> 
+                  <tr>
+                     <td><?php echo $row['id']; ?></td>
+                     <td><?php echo $row['name']; ?></td>
+                     <td><?php echo $row['description']; ?></td>
+                     <td><?php echo $row['image']; ?></td>
+                     <td><?php echo $row['price']; ?></td>
+                     <td><?php echo $row['stock']; ?></td>
+                     <td><?php echo $row['date_added']; ?></td>
+                  </tr>
+                  <?php
+                  }
+                  ?> 
                   </tbody>
                </table>
+               <div class="text-center">
+                  <a href="print.php" class="btn btn-primary">Print</a>
+               </div>
 				</div>
 			</div>
 		</div>
