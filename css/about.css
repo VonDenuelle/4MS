@@ -1,0 +1,33 @@
+img.mlogo{
+   height: 170px;
+   border: solid black;
+   border-radius: 30rem;
+   float: right;
+}
+
+p.par{
+   font-size: 20px;
+   text-align: justify;
+   margin-right: 2in;
+}
+
+img.loc{
+   height: 180px;
+   width: 5in;
+   border-radius: 20px;
+}
+
+
+p.par2{
+   font-size: 20px;
+}
+
+.par2, .title{
+   margin-left: 1.2in;
+}
+
+.row.mx-auto{
+   background-color: #e1adadb6;
+   border-radius: 30px;
+   width: 12in;
+}
