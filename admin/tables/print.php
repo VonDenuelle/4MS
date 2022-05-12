@@ -50,7 +50,6 @@ require '../../php/config.php';
                     }
                ?>
                <table class="table table-hover">
-               <button onclick="window.print();" href="sample.php" class="btn btn-success" id="print-btn" style="width: 300px;">Print</button>
                   <thead>
                   
                      <tr>
@@ -128,7 +127,8 @@ require '../../php/config.php';
                   <h2 style="font-weight: 900;">Total Sales : <span style="font-weight: 500;">₱<?php echo $totalSales; ?></span></h2>
                </div>
                   
-               <button onclick="window.print();" href="sample.php" class="btn btn-success" id="print-btn" style="width: 300px;">Print</button>
+               <button onclick="window.print();" href="sample.php" class="btn btn-success" id="print-btn" style="width: 300px;"><img src="https://img.icons8.com/material-outlined/24/000000/print.png"/>Print</button>
+               <a href="../dashboard.php" class="btn btn-primary" style="width: 300px;"  id="print-btn"><img src="https://img.icons8.com/material-outlined/24/000000/back--v1.png"/>Back</a>
                   <br>
                   <br>
             </div>
